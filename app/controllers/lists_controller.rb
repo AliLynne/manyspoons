@@ -8,6 +8,11 @@ class ListsController < ApplicationController
     @list = List.new
   end
 
+  def create
+    List.create(list_params)
+    redirect_to root_path
+  end
+
   def edit
     @list = List.find(params[:id])
   end
@@ -19,6 +24,6 @@ class ListsController < ApplicationController
   private
 
   def list_params
-    params.require(:list).premit(:title)
+    params.require(:list).permit(:title)
   end
 end
