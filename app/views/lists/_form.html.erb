@@ -1,17 +1,15 @@
-<%= form_with(model: list, local: true) do |form| %>
-  <% if list.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(list.errors.count, "error") %> prohibited this list from being saved:</h2>
 
-      <ul>
-      <% list.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="actions">
-    <%= form.submit %>
+<div class="row">
+  <div class="col">
   </div>
-<% end %>
+  <div class="box col">
+    <br />
+    <%= simple_form_for @list do |f| %>
+      <%= f.input :title %>
+      <%= f.submit 'Create', class: 'btn btn-primary'%>
+    <% end %>
+    <br />
+  </div>
+  <div class="col">
+  </div>
+</div>
