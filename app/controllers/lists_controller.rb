@@ -1,4 +1,5 @@
 class ListsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create, :update, :show, :destroy]
 
   def index
     @lists = List.all
@@ -9,7 +10,7 @@ class ListsController < ApplicationController
   end
 
   def create
-    List.create(list_params)
+    current_user.lists.create(list_params)
     redirect_to root_path
   end
 
