@@ -4,9 +4,17 @@
   </div>
   <div class="col box">
     <h2><%= @list.title %></h2>
-    <%= link_to 'Edit', edit_list_path(@list) %>
-    <%= link_to 'Delete', list_path(@list), method: :delete, data: { confirm: 'Are you sure?' } %>
-    <%= link_to 'Back', lists_path %>
+    <%= link_to 'Edit', edit_list_path(@list), class: 'btn btn-primary' %>
+    <%= link_to 'Delete', list_path(@list), class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%= link_to 'Back', lists_path, class: 'btn btn-primary' %>
+    <%= link_to 'Add new task', new_list_task_path(@list), class: 'btn btn-primary' %>
+    <ul>
+      <% @list.tasks.each do |task| %>
+        <li>
+          <%= task.title %>
+        </li>
+      <% end %>
+    </ul>
   </div>
   <div class="col">
   </div>
