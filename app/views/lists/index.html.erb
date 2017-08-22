@@ -1,21 +1,21 @@
 <p id="notice"><%= notice %></p>
 
-<div class="row">
-  <div class="col">
-  </div>
-  <div class="box col">
-    <h2>Your Lists</h2>
-    <ul>
-      <% @lists.each do |list| %>
-          <li><%= link_to list.title, list %></li>
-          
-          <br />
-      <% end %>
-    </ul>
 
-  <%= link_to 'New List', new_list_path %>
+  <% @lists.each do |list| %>
+    <div class="lists">
+      <div class="box">
+        <%= link_to list.title, list %>
+        <ul class="list-group">
+          <% list.tasks.each do |task| %>
+            <li class="list-group-item">
+              <input class="toggle" type="checkbox">
+              <%= task.title %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+  <% end %>
+    <div class="box">
+      <%= link_to 'New List', new_list_path %>
+    </div>
   </div>
-  <div class="col">
-  </div>
-</div>
-<br>

@@ -1,6 +1,37 @@
-@import "bootstrap";
+
 @import "font-awesome";
 
 .navbar {
   box-shadow:0 1px 4px rgba(0, 0, 0, 0.3)
+}
+
+.lists {
+  display: flex;
+}
+
+.box {
+  width:30%;
+  background-color:white;
+  margin:25px 15px;
+  border-radius:5px;
+  -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 0, 0, 0.1) inset;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 0, 0, 0.1) inset;
+  box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 0, 0, 0.1) inset;
+}
+
+.box a {
+  text-decoration: none;
+}
+
+.box h2 {
+  text-align: center;
+}
+
+.box ul {
+  margin-left: 0;
+}
+
+.box li {
+  display: inline;
+  margin-right: 15px;
 }
