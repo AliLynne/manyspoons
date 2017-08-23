@@ -1,24 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="utf-8"/>
     <title>Manyspoons</title>
     <%= csrf_meta_tags %>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-
-      <%= link_to 'How Many Spoons?', root_path, class: 'navbar-brand' %>
-
-
-
-        <%= link_to new_list_path do %>
-          <i class="fa fa-plus"></i>
-          New List
-        <% end %>
-
+    <nav class="navbar header">
+      <ul class="nav-list">
+        <li class="brand"><%= link_to 'How Many Spoons?', root_path, class: 'navbar-brand', alt: 'Home Page' %></li>
       <% if user_signed_in? %>
         <li class="nav-item">
           <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'nav-link' %>
@@ -32,7 +26,6 @@
         </li>
       <% end %>
     </ul>
-  </div>
 </nav>
 
   <% if notice.present? %>
@@ -43,5 +36,7 @@
   <% end %>
 
     <%= yield %>
+
+
   </body>
 </html>

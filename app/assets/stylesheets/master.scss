@@ -1,17 +1,64 @@
-
 @import "font-awesome";
 
-.navbar {
-  box-shadow:0 1px 4px rgba(0, 0, 0, 0.3)
+$white: #D5D5DF;
+$main: #363377;
+$main-light: #7473A6;
+$main-dark: #0D0C48;
+$black: #010119;
+
+html, body{
+  height: 100%;
+  margin: 0;
 }
+
+body {
+  background: image_url('linedpaper.png') $white;
+}
+
+ul {
+  margin: 0;
+  align-items: stretch;
+
+}
+
+.navbar {
+
+  height: 3.125em;
+  box-shadow:0 1px 4px rgba(0, 0, 0, 0.3);
+  li {
+    display: inline;
+    list-style:none;
+  }
+  a {
+    color: $white;
+    text-decoration: none;
+    font-size: 1.5em;
+  }
+}
+
+.header {
+  background: linear-gradient(0, hsl(241, 22, 55), hsl(256, 22, 55));
+  position: static;
+  top: 0;
+  margin-top: 0;
+  display: flex;
+  align-items: center;
+}
+
+
 
 .lists {
   display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
+
 .box {
-  width:30%;
-  background-color:white;
+  flex-grow: 1;
+  width: 30%;
+  background-color: white;
   margin:25px 15px;
   border-radius:5px;
   -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 0, 0, 0.1) inset;
@@ -23,7 +70,7 @@
   text-decoration: none;
 }
 
-.box h2 {
+.box h2, h3 {
   text-align: center;
 }
 
@@ -34,4 +81,23 @@
 .box li {
   display: inline;
   margin-right: 15px;
+}
+
+.btn {
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  color: $white;
+  background: $main-light;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: $main;
+  text-decoration: none;
+}
+
+.list-buttons {
+  align-items: center;
 }
